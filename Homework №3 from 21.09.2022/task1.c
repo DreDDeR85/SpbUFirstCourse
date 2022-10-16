@@ -7,6 +7,7 @@ void printArr(int *array, int lenOfArray)
     {
         printf("%d ", array[i]);
     }
+    printf("\n");
 }
 
 void insertionSort(int *arr, int arrStart, int arrEnd)
@@ -69,7 +70,42 @@ void quickSort(int *array, int lenOfArray)
     quickSortRec(array, 0, lenOfArray - 1);
 }
 
+void tests(void)
+{
+    #define lenOfTestArrs 9
+    int arrTest1[] = {54, -6, 3, 9, 2, 5, 2, -4, -54};
+    int arrTest2[] = {2, 2, 2, 2, 2, 2, 2, 2, 2};
+    int arrTest3[] = {10, 8, 6, 4, 2, 0, -2, -4, -6};
+    int arrTest4[] = {1, 2, 4, 8, 16, 32, 64, 128, 256};
+
+    printf("Test number 1. Original array:\n");
+    printArr(arrTest1, lenOfTestArrs);
+    quickSort(arrTest1, lenOfTestArrs);
+    printf("Array after quick sort:\n");
+    printArr(arrTest1, lenOfTestArrs);
+
+
+    printf("Test number 2. Original array:\n");
+    printArr(arrTest2, lenOfTestArrs);
+    quickSort(arrTest2, lenOfTestArrs);
+    printf("Array after quick sort:\n");
+    printArr(arrTest2, lenOfTestArrs);
+
+    printf("Test number 3. Original array:\n");
+    printArr(arrTest3, lenOfTestArrs);
+    quickSort(arrTest3, lenOfTestArrs);
+    printf("Array after quick sort:\n");
+    printArr(arrTest3, lenOfTestArrs);
+
+    printf("Test number 4. Original array:\n");
+    printArr(arrTest4, lenOfTestArrs);
+    quickSort(arrTest4, lenOfTestArrs);
+    printf("Array after quick sort:\n");
+    printArr(arrTest4, lenOfTestArrs);
+}
+
 int main() {
+    tests();
     int lenOfArray = 0, temp = 0;
     printf("Hello! Please, give me a natural size of array and an array,\n");
     printf("And I will sort him by quick sort and if subarray (or array)\n");
