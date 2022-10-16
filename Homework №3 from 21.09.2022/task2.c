@@ -78,8 +78,45 @@ int binSearch(int *array, int searchElem, int left, int right)
     }
 }
 
+void tests(void) {
+#define lenArrForTest 9
+    int arrTest1[] = {1, 2, 3, 4, -5, -6, -7, -8, 0};
+    int arrTest2[] = {-43, 3, 23, -54, 34, 86, -32, 66, -12};
+    int numTest1[] = {6, 3, 9, 43, 0, 8, 4, -5, -12};
+    int numTest2[] = {1, 34, -54, -90, -91, -32, 22, 55, 11};
+    printf("This is a test number 1. Original array is:\n");
+    printArr(arrTest1, lenArrForTest);
+    quickSort(arrTest1, lenArrForTest);
+    for (int i = 0; i < lenArrForTest; ++i)
+    {
+        if (binSearch(arrTest1, numTest1[i], 0, lenArrForTest) == 1)
+        {
+            printf("Pseudo random generated number is %d, and %d contains in the array!\n", numTest1[i], numTest1[i]);
+        }
+        else
+        {
+            printf("Pseudo random generated number is %d, and %d not contains in the array!\n", numTest1[i], numTest1[i]);
+        }
+    }
+    printf("This is a test number 2. Original array is:\n");
+    printArr(arrTest2, lenArrForTest);
+    quickSort(arrTest2, lenArrForTest);
+    for (int i = 0; i < lenArrForTest; ++i)
+    {
+        if (binSearch(arrTest2, numTest2[i], 0, lenArrForTest) == 1)
+        {
+            printf("Pseudo random generated number is %d, and %d contains in the array!\n", numTest2[i], numTest2[i]);
+        }
+        else
+        {
+            printf("Pseudo random generated number is %d, and %d not contains in the array!\n", numTest2[i], numTest2[i]);
+        }
+    }
+}
+
 int main()
 {
+    tests();
     srand(time(NULL));
     int n = 0, k = 0, answer = 0;
     printf("Hello! Please, give me a 2 numbers: n and k,\n");
