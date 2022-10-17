@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define lenOfTestArrs 9
 
 void printArr(int *array, int lenOfArray)
 {
@@ -72,7 +73,6 @@ void quickSort(int *array, int lenOfArray)
 
 void tests(void)
 {
-    #define lenOfTestArrs 9
     int arrTest1[] = {54, -6, 3, 9, 2, 5, 2, -4, -54};
     int arrTest2[] = {2, 2, 2, 2, 2, 2, 2, 2, 2};
     int arrTest3[] = {10, 8, 6, 4, 2, 0, -2, -4, -6};
