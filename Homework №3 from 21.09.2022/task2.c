@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #define MAXNUM 100
+#define lenArrForTest 9
 
 void printArr(int *array, int lenOfArray)
 {
@@ -78,8 +79,8 @@ int binSearch(int *array, int searchElem, int left, int right)
     }
 }
 
-void tests(void) {
-#define lenArrForTest 9
+void tests(void)
+{
     int arrTest1[] = {1, 2, 3, 4, -5, -6, -7, -8, 0};
     int arrTest2[] = {-43, 3, 23, -54, 34, 86, -32, 66, -12};
     int numTest1[] = {6, 3, 9, 43, 0, 8, 4, -5, -12};
@@ -145,5 +146,4 @@ int main()
         }
     }
     free(array);
-    free(arrayAnswer);
-}
+ 
