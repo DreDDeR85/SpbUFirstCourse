@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define arrTestLen 9
 
 void printArr(int *array, int lenOfArray)
 {
@@ -78,7 +79,6 @@ void mostPopularElement(int *array, int lenOfArray, int *subArr)
 
 void tests(void)
 {
-    #define arrTestLen 9
     int subArr[] = {0, 1};
     int arrTest1[] = {4, 8, -5, 4, 0, 2, 1, 9, 5};
     int arrTest2[] = {4, 4, 4, 4, 4, 4, 4, 4, 4};
