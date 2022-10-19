@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define constSizeStr 10
 
 void swap(int *firstElement, int *secondElement)
 {
