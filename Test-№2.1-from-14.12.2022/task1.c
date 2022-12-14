@@ -102,7 +102,7 @@ long long orderCounter(FILE *file)
             }
         } else if (pointer == 1)
         {
-            for (int i = 0; i < 8; --i)
+            for (int i = 0; i < 8; ++i)
             {
                 if (c == '\t' || c == '\n')
                 {
@@ -123,7 +123,7 @@ long long orderCounter(FILE *file)
             resetTemp(temp);
         } else if (pointer == 2)
         {
-            for (int i = 0; i < 8; --i)
+            for (int i = 0; i < 8; ++i)
             {
                 if (c == '\t' || c == '\n' || c == EOF)
                 {
