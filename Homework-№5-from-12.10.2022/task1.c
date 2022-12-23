@@ -1,9 +1,9 @@
 #include "stack.h"
-#define maxSize 102 //i += 2
+#define MAX_SIZE 102 //i += 2
 
 void stringReset(char *string)
 {
-    for (int i = 0; i < maxSize; ++i)
+    for (int i = 0; i < MAX_SIZE; ++i)
     {
         string[i] = '\0';
     }
@@ -26,7 +26,7 @@ bool isItAValidSymbol(int symbol)
 
 bool isItAValidArithmeticExpression(char *string)
 {
-    for (int i = 0; i < maxSize - 1; ++i)
+    for (int i = 0; i < MAX_SIZE - 1; ++i)
     {
         if (!isItAValidSymbol(string[i]))
         {
@@ -34,7 +34,7 @@ bool isItAValidArithmeticExpression(char *string)
         }
     }
     int cntOfDgs = 0, cntOfSigns = 0;
-    for (int i = 0; i < maxSize - 1; i += 2)
+    for (int i = 0; i < MAX_SIZE - 1; i += 2)
     {
         if (!isADigit(string[i]) && !isItAnArithmeticSign(string[i]) && (string[i] != '\0'))
         {
@@ -72,7 +72,7 @@ int main()
     printf("Also the entered line must\n");
     printf("be less than 100 symbols or equal to it\n");
     printf("Your line:");
-    char inputLine[maxSize] = {0};
+    char inputLine[MAX_SIZE] = {0};
     fgets(inputLine, 100, stdin);
     while (!isItAValidArithmeticExpression(inputLine))
     {
