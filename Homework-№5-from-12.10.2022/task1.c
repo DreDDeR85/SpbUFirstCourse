@@ -21,7 +21,7 @@ bool isItAnArithmeticSign(int symbol)
 
 bool isItAValidSymbol(int symbol)
 {
-    return (isADigit(symbol) || isItAnArithmeticSign(symbol) || (symbol == ' ') || (symbol == '\0'));
+    return (isADigit(symbol) || isItAnArithmeticSign(symbol) || (symbol == ' ') || (symbol == '\0') || (symbol == '\n'));
 }
 
 bool isItAValidArithmeticExpression(char *string)
@@ -73,13 +73,13 @@ int main()
     printf("be less than 100 symbols or equal to it\n");
     printf("Your line:");
     char inputLine[MAX_SIZE] = {0};
-    fgets(inputLine, 100, stdin);
+    fgets(inputLine, MAX_SIZE - 2, stdin);
     while (!isItAValidArithmeticExpression(inputLine))
     {
         printf("You have entered an incorrect string!\n");
         printf("Please enter the line again!\n");
         stringReset(inputLine);
-        gets(inputLine);
+        fgets(inputLine, MAX_SIZE - 2, stdin);
     }
 
     int pointerToStringSymbol = 0;
